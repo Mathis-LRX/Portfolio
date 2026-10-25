@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathis Leroux, architecte d’intérieur et designer</title>
+<meta name="description" content="Mathis Leroux, architecte d’intérieur et designer, ouvert aux opportunités professionnelles. Projet de fin d’études MUE, projets de formation, expérience en agence d’architecture, contact.">
+<meta property="og:title" content="Mathis Leroux, architecte d’intérieur et designer">
+<meta property="og:image" content="images/mue-halle-soir.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23231f20'/%3E%3Cpath d='M20 14h30L44 50H14z' fill='%23d4b200'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jost-800-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Polices du CV : Inter pour le texte, Futura Bold Oblique pour les titres.
+   Futura n’est pas libre de droits : Jost, très proche, la remplace tant que fonts/Futura-BoldOblique.woff2 est absent. */
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/inter-400.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/inter-600.woff2) format("woff2")}
+@font-face{font-family:"Futura CV";font-weight:800;font-style:italic;font-display:swap;src:local("Futura Bold Oblique"),local("Futura-BoldOblique"),local("FuturaPT-BoldObl"),url(fonts/Futura-BoldOblique.woff2) format("woff2")}
+@font-face{font-family:"Jost";font-weight:800;font-style:italic;font-display:swap;src:url(fonts/jost-800-italic.woff2) format("woff2")}
+:root{--ink:#231f20;--cream:#fdfcee;--gold:#d4b200;--goldd:#7d6700;--mute:#aaa699;--line:rgba(253,252,238,.22);--lined:rgba(35,31,32,.22);--d:"Futura CV","Jost","Futura","Century Gothic",sans-serif;--b:"Inter","Helvetica Neue",Arial,sans-serif;--pad:clamp(20px,4.5vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font:400 1.125rem/1.65 var(--b);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html:has(dialog[open]){overflow:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+::selection{background:var(--gold);color:var(--ink)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.sec{padding:clamp(72px,10vw,140px) 0}
+.light{background:var(--cream);color:var(--ink)}
+.light p,.light li{color:#34302f}
+.h2,.h3,.t{font-family:var(--d);font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.h2{font-size:clamp(2.6rem,6vw,5rem);line-height:.95}
+.h3{font-size:clamp(1.35rem,2.2vw,1.7rem);line-height:1.1}
+.k{font:600 .85rem/1.4 var(--b);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.light .k{color:var(--goldd)}
+.lead{font:400 clamp(1.25rem,2vw,1.6rem)/1.4 var(--b);max-width:44ch}
+p{max-width:64ch}
+.btn{display:inline-block;padding:14px 30px;border:2px solid var(--gold);background:transparent;font:600 1rem var(--b);cursor:pointer;transition:background .25s,color .25s}
+.btn.fill,.btn:hover{background:var(--gold);color:var(--ink)}
+.btn.fill:hover{background:transparent;color:inherit}
+.light .btn{border-color:var(--ink)}.light .btn:hover{background:var(--ink);color:var(--cream)}
+.row{display:grid;grid-template-columns:minmax(140px,.6fr) 2.4fr;gap:6px 28px;padding:16px 0;border-top:1px solid var(--line)}
+.light .row{border-color:var(--lined)}
+.row b{font-weight:600}.row .y{font:italic 800 1.05rem var(--d);text-transform:uppercase}
+
+/* Navigation : onglet noir en haut, au centre */
+.top{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:40;background:#000;border-radius:0 0 1.5rem 1.5rem;padding:10px clamp(18px,2.6vw,36px)}
+.top ul{display:flex;gap:clamp(14px,3vw,44px);list-style:none;align-items:center;font-size:clamp(.74rem,.95vw,.92rem);white-space:nowrap}
+.top a{color:rgba(225,224,204,.8);transition:color .25s}
+.top a:hover,.top a[aria-current]{color:var(--gold)}
+.top .cv{color:var(--gold);font-weight:600}
+[hidden]{display:none!important}
+body.home{overflow:hidden;height:100svh}
+body.home footer{display:none}
+
+/* Accueil : un seul écran, une image de projet différente à chaque ouverture */
+.hero{height:100svh;min-height:560px;padding:10px}
+.hbox{position:relative;height:100%;overflow:hidden;border-radius:clamp(1rem,2.4vw,2rem);isolation:isolate}
+.hbox{background:radial-gradient(900px 620px at 76% 26%,rgba(176,78,38,.30),transparent 70%),radial-gradient(700px 500px at 8% 70%,rgba(212,178,0,.08),transparent 70%),#1c1819}
+.art{position:absolute;inset:0;z-index:-3;width:100%;height:100%}
+.art .topo{animation:drift 46s ease-in-out infinite alternate;transform-origin:50% 50%}
+@keyframes drift{to{transform:translate(-14px,10px) scale(1.025)}}
+.art .c1{fill:none;stroke:#E1E0CC;stroke-opacity:.10;stroke-width:1}
+.art .c2{fill:none;stroke:#c8643a;stroke-opacity:.42;stroke-width:1.4}
+.art .bk{fill:#b4532a}
+.art .rt{fill:none;stroke:var(--gold);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;animation:draw 3s .3s cubic-bezier(.5,0,.2,1) backwards}
+@keyframes draw{from{stroke-dashoffset:1}}
+.art .nd{animation:appear .9s backwards;animation-delay:calc(.7s + var(--n)*.62s)}
+@keyframes appear{from{opacity:0}}
+.art .rg{fill:none;stroke:#E1E0CC;stroke-opacity:.75;stroke-width:1.4}
+.art .dt{fill:var(--gold)}
+.art a{cursor:pointer}
+.art .lk{font:600 14px var(--b);fill:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.art a:hover .lk{fill:#E1E0CC}
+.art .pulse{fill:none;stroke:var(--gold);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pulse 2.4s 3.4s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.9}to{transform:scale(2.6);opacity:0}}
+.art .yr{font:italic 800 20px var(--d);fill:var(--gold)}
+.art .tx{font:400 13.5px var(--b);fill:#E1E0CC;fill-opacity:.9}
+.art image{filter:grayscale(1) contrast(1.08) drop-shadow(0 0 1.5px rgba(225,224,204,.55))}
+.noise{position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:.45;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+.shade{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to bottom,transparent 55%,rgba(0,0,0,.55))}
+.cap{position:absolute;top:clamp(16px,2.4vw,30px);left:clamp(18px,2.8vw,40px);display:flex;align-items:center;gap:12px;font:600 .88rem/1.3 var(--b);color:rgba(225,224,204,.92);animation:fadeup .9s .9s backwards}
+.cap:before{content:"";width:30px;height:3px;background:var(--gold);transform:skewX(-20deg)}
+.hc{position:absolute;left:0;right:0;bottom:0;padding:0 clamp(18px,2.8vw,40px) clamp(6px,1.6vh,18px)}
+.hrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,450px);gap:clamp(20px,4vw,64px);align-items:end}
+h1.hn{display:flex;flex-direction:column;font:italic 800 min(13.5vw,25svh)/.84 var(--d);text-transform:uppercase;letter-spacing:-.045em;color:#E1E0CC}
+.hn .w{display:block;animation:pull .9s cubic-bezier(.16,1,.3,1) backwards;animation-delay:calc(var(--i)*.14s + .15s)}
+.hside{display:flex;flex-direction:column;gap:18px;padding-bottom:clamp(14px,3.2vh,34px);animation:pull .9s cubic-bezier(.16,1,.3,1) .55s backwards}
+@keyframes pull{from{transform:translateY(26px);opacity:0}}
+@keyframes fadeup{from{opacity:0;translate:0 24px}}
+.hside p{max-width:none;color:rgba(225,224,204,.9);font-size:clamp(.9rem,1.05vw,1.02rem);line-height:1.4}
+.pills{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;background:#E1E0CC;color:#000;padding:4px 4px 4px 22px;font:600 .98rem var(--b);cursor:pointer;transition:gap .3s}
+.pill:hover{gap:14px}
+.pill i{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#000;transition:transform .3s}
+.pill:hover i{transform:scale(1.1)}
+.pill svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tl{color:#E1E0CC;border-bottom:2px solid var(--gold);padding-bottom:2px;font-size:.98rem}
+.tl:hover{color:var(--gold)}
+
+/* Projets */
+.feat{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(28px,5vw,80px);align-items:start;margin-top:48px;padding-bottom:clamp(48px,7vw,90px);border-bottom:1px solid var(--lined)}
+.feat button.im{display:block;width:100%;border:0;background:none;padding:0;cursor:pointer}
+.feat img{width:100%}
+.feat .cap{margin-top:10px;font-size:.88rem;color:#5a5650}
+.feat__t{font-size:clamp(4rem,10vw,8.5rem);line-height:.85;margin:10px 0 14px}
+.feat__s{font:italic 800 clamp(1.1rem,1.8vw,1.4rem)/1.2 var(--d);text-transform:uppercase;margin-bottom:20px}
+.feat p+p{margin-top:14px}
+.feat .btn{margin-top:26px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none}
+.tags li{border:2px solid var(--ink);padding:2px 14px;font:600 .85rem var(--b)}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px) clamp(24px,4vw,56px);margin-top:36px;align-items:start}
+.pn{border:0;background:none;text-align:left;cursor:pointer;color:inherit}
+.pn img{width:100%;transition:opacity .3s}
+.pn:hover img{opacity:.85}
+.pn b{display:block;margin-top:14px;font:italic 800 1.6rem/1.05 var(--d);text-transform:uppercase}
+.pn b em{font-style:normal;color:var(--goldd);margin-right:10px}
+.pn small{display:block;margin-top:6px;color:#4a4647;font-size:1rem;line-height:1.5}
+.pn:hover b{color:var(--goldd)}
+
+/* Expérience */
+.xp .lead{margin:22px 0 40px}
+.xp .row p{max-width:none}
+.pr{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);margin-top:clamp(56px,8vw,100px)}
+.pr .k,.xp .sk .k{margin-bottom:12px}
+.pr .row{grid-template-columns:8rem 1fr}
+.sk{margin-top:clamp(40px,6vw,70px)}
+.about{margin-top:clamp(40px,6vw,70px);max-width:64ch}
+.about p+p{margin-top:14px}
+
+/* Contact */
+.mail{display:block;margin:30px 0 clamp(36px,6vw,64px);font:italic 800 clamp(1.8rem,6.4vw,5.6rem)/1 var(--d);text-transform:uppercase;letter-spacing:-.02em;overflow-wrap:anywhere}
+.mail:hover{color:var(--goldd)}
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,6vw,100px)}
+.contact .row{grid-template-columns:8rem 1fr}
+label{display:block;margin-bottom:24px;font-size:.95rem;color:#5a5650}
+input,select,textarea{display:block;width:100%;margin-top:6px;background:none;border:0;border-bottom:1px solid var(--lined);border-radius:0;color:var(--ink);font:400 1.1rem var(--b);padding:10px 0}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--goldd)}
+textarea{resize:vertical;min-height:110px}
+#st{margin-top:16px;color:var(--goldd);min-height:1.7em}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:.92rem;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{font:italic 800 1rem var(--d);text-transform:uppercase;color:var(--cream)}
+
+/* Fiche projet */
+dialog{width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:var(--ink);color:var(--cream);overflow:auto}
+dialog::backdrop{background:#000}
+.dh{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:12px var(--pad);background:rgba(35,31,32,.94);border-bottom:1px solid var(--line)}
+.dh .btn{padding:8px 22px}
+.dh .h2{font-size:clamp(1.6rem,3vw,2.3rem)}.dh em{font-style:normal;color:var(--gold);margin-right:12px}
+.dbody{display:grid;grid-template-columns:.85fr 1.5fr;gap:clamp(32px,6vw,90px);padding:clamp(32px,5vw,72px) var(--pad) 40px;max-width:1360px;margin:0 auto}
+.dbody aside p{margin-bottom:16px;color:#ebe8da}
+.dbody .sub{font:italic 800 1.35rem/1.2 var(--d);text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.fiche div{border-left:3px solid var(--gold);padding:2px 0 2px 14px;margin:0 0 14px}
+.fiche dt{font:italic 800 .85rem var(--d);text-transform:uppercase;color:var(--mute)}
+.gal{display:grid;gap:34px}
+.gal img{width:100%}
+.gal figcaption{border-left:3px solid var(--gold);padding-left:14px;margin-top:10px;font-size:.98rem;color:#dedbcc;max-width:62ch}
+.nx{display:flex;justify-content:flex-end;padding:20px var(--pad) 64px;max-width:1360px;margin:0 auto}
+
+@media(max-width:860px){
+.feat,.pr,.contact,.dbody{grid-template-columns:1fr}
+.pg{grid-template-columns:1fr}
+.row,.pr .row,.contact .row{grid-template-columns:1fr}
+.hrow{grid-template-columns:1fr;gap:18px}
+h1.hn{font-size:min(22vw,16svh)}
+.hside{gap:14px;padding-bottom:12px}
+.cap{top:56px;font-size:.8rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Navigation principale">
+  <ul>
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="cv" href="cv.pdf" target="_blank" rel="noopener">CV</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="accueil">
+  <div class="hbox">
+    <svg class="art" id="art" role="img" aria-label="Image abstraite de mon parcours : un tracé doré relie un stage en maîtrise d’œuvre, l’architecture d’intérieur, le design territorial et le projet MUE, sur des courbes de niveau et un motif de briques et de silex."></svg>
+    <div class="noise"></div>
+    <div class="shade"></div>
+    <p class="cap">Mon parcours, 2018 à aujourd’hui</p>
+    <div class="hc">
+      <div class="hrow">
+        <h1 class="hn" aria-label="Mathis Leroux"><span class="w" style="--i:0">Mathis</span><span class="w" style="--i:1">Leroux</span></h1>
+        <div class="hside">
+          <p>Architecte d’intérieur et designer, ouvert aux opportunités professionnelles.</p>
+          <div class="pills">
+            <button class="pill" id="go" type="button" data-i="0"><span>Découvrir MUE</span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></i></button>
+            <a class="tl" href="#contact">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="projets" class="sec light">
+  <div class="wrap">
+    <p class="k">Projets</p>
+    <h2 class="h2" style="margin-top:12px">Ce que j’ai conçu</h2>
+
+    <article class="feat" id="mue">
+      <div>
+        <button class="im" type="button" data-i="0" aria-label="Découvrir le projet MUE"><img src="images/mue-aerial.webp" width="1400" height="948" alt="Vue aérienne de l’ancienne discothèque de Villainville" decoding="async"></button>
+        <p class="cap">Vue drone de l’ancienne discothèque de Villainville. © Kevin Leconte</p>
+      </div>
+      <div>
+        <p class="k">Projet de fin d’études</p>
+        <h3 class="t feat__t">MUE</h3>
+        <p class="feat__s">Réhabilitation d’une friche rurale en halle commune</p>
+        <p>Ce projet réunit tout ce que je suis professionnellement : le design de territoire, l’architecture et l’architecture d’intérieur, de l’échelle du territoire au détail constructif.</p>
+        <p>Mené en totale autonomie, avec la commune de Villainville et Le Havre Seine Métropole que je suis allé démarcher moi-même. Trois années de recherche, et un projet toujours en cours.</p>
+        <ul class="tags"><li>Design territorial</li><li>Architecture</li><li>Architecture d’intérieur</li></ul>
+        <button class="btn" type="button" data-i="0">Découvrir le projet</button>
+      </div>
+    </article>
+
+    <p class="k" style="margin-top:clamp(48px,7vw,80px)">Autres projets de formation</p>
+    <div class="pg" id="pg"></div>
+  </div>
+</section>
+
+<section id="experience" class="sec xp">
+  <div class="wrap">
+    <p class="k">Expérience professionnelle</p>
+    <h2 class="h2" style="margin-top:12px">En agence d’architecture</h2>
+    <p class="lead">Alternance depuis 2024 chez MP Architecte, au Havre. J’interviens sur toute la chaîne du projet, de la conception à la réception des travaux.</p>
+    <div>
+      <div class="row"><h3 class="h3">Conception et dessin</h3><p>Plans techniques et modélisation 3D. Développement de la proposition, premiers choix techniques, choix architecturaux et matériaux.</p></div>
+      <div class="row"><h3 class="h3">Dossiers réglementaires</h3><p>Dépôt de permis de construire, déclarations préalables, dossiers ERP : unités de passage, accueil des personnes à mobilité réduite.</p></div>
+      <div class="row"><h3 class="h3">Relations avec les entreprises</h3><p>Rédaction des pièces, consultation et analyse des offres, planification avec les entreprises.</p></div>
+      <div class="row"><h3 class="h3">Chantier</h3><p>Réunions de suivi de chantier, gestion et ajustement des imprévus, adaptation des plans.</p></div>
+      <div class="row"><h3 class="h3">Réception</h3><p>Suivi des réserves, réception des travaux, constitution du dossier des ouvrages exécutés.</p></div>
+    </div>
+
+    <div class="pr">
+      <div>
+        <p class="k">Formation</p>
+        <div class="row"><span class="y">2024 – 2026</span><span><b>Master Design territorial</b><br>École de design Nantes-Atlantique</span></div>
+        <div class="row"><span class="y">2021 – 2024</span><span><b>Bachelor Architecture d’intérieur</b><br>École de design Nantes-Atlantique</span></div>
+        <div class="row"><span class="y">2018 – 2021</span><span><b>Baccalauréat général scientifique</b><br>Lycée Victor-Hugo, Château-Gontier</span></div>
+      </div>
+      <div>
+        <p class="k">Expériences</p>
+        <div class="row"><span class="y">2024 – 2026</span><span><b>Alternance en agence d’architecture</b><br>MP Architecte, Le Havre</span></div>
+        <div class="row"><span class="y">2023</span><span><b>Stage en architecture d’intérieur</b><br>Lydie Gatignol</span></div>
+        <div class="row"><span class="y">2018</span><span><b>Stage en maîtrise d’œuvre</b><br>Interface 3D</span></div>
+      </div>
+    </div>
+    <div class="sk">
+      <p class="k">Savoir-faire</p>
+      <div class="row"><b>CAO / DAO</b><span>Allplan, AutoCAD, Palette CAD, Revit, SketchUp</span></div>
+      <div class="row"><b>Visualisation</b><span>Twinmotion, Enscape, Suite Adobe</span></div>
+      <div class="row"><b>Gestion de projet</b><span>MS Office, MS Project, Attic+</span></div>
+      <div class="row"><b>Langue</b><span>Anglais, TOEIC 865</span></div>
+      <div class="row"><b>Mobilité</b><span>Permis B, véhiculé</span></div>
+    </div>
+    <div class="about">
+      <p class="k" style="margin-bottom:12px">Mon parcours</p>
+      <p>En 2018, un stage chez un maître d’œuvre m’a fait découvrir le chantier. L’observation, puis l’envie de me rapprocher de la création, m’ont mené du design à l’architecture d’intérieur, puis à l’échelle du territoire avec le City Design Lab.</p>
+      <p>Mes valeurs : le travail, le dépassement de soi et la force du collectif. Elles viennent aussi du sport, cyclisme et athlétisme, et de l’engagement bénévole.</p>
+      <p style="margin-top:26px"><a class="btn" href="cv.pdf" target="_blank" rel="noopener">Télécharger mon CV</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec light">
+  <div class="wrap">
+    <p class="k">Contact</p>
+    <h2 class="h2" style="margin-top:12px">Contactez-moi</h2>
+    <a class="mail" href="mailto:designlrx@gmail.com">designlrx@gmail.com</a>
+    <div class="contact">
+      <div>
+        <div class="row"><b>Téléphone</b><a href="tel:+33606464848">06 06 46 48 48</a></div>
+        <div class="row"><b>Disponibilité</b><span>Dès qu’une opportunité se présente</span></div>
+        <div class="row"><b>Mobilité</b><span>Permis B, véhiculé</span></div>
+        <p style="margin-top:26px"><a class="btn" href="cv.pdf" target="_blank" rel="noopener">Télécharger mon CV</a></p>
+      </div>
+      <form id="f">
+        <label>Nom<input name="nom" required autocomplete="name"></label>
+        <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
+        <label>Objet<select name="objet"><option>Offre d’emploi</option><option>Collaboration</option><option>Autre</option></select></label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button class="btn fill" type="submit">Envoyer le message</button>
+        <p id="st" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><b>Mathis Leroux</b>, architecte d’intérieur et designer, <span id="y"></span></span>
+    <a href="#accueil">Retour à l’accueil</a>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <div class="dh"><h2 class="h2" id="dt"></h2><button class="btn" id="cl" type="button">Fermer</button></div>
+  <div class="dbody"><aside id="da"></aside><div class="gal" id="dg"></div></div>
+  <div class="nx"><button class="btn" id="nx" type="button">Projet suivant</button></div>
+</dialog>
+
+<script src="js/app.js"></script>
+</body>
+</html>
