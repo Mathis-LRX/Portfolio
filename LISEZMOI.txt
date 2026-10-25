@@ -1,0 +1,5 @@
+Polices du CV
+- Inter (texte) : incluse dans ce dossier, licence SIL Open Font License.
+- Futura Bold Oblique (titres) : police sous licence, donc non fournie. Jost, très proche, la remplace.
+  Pour afficher la vraie Futura : convertissez votre fichier Futura Bold Oblique en WOFF2 (outil de conversion en ligne),
+  nommez-le Futura-BoldOblique.woff2 et déposez-le dans ce dossier. Le site l'utilise automatiquement, sans rien modifier.
